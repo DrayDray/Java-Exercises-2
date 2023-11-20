@@ -35,10 +35,9 @@ public class UniqueChallenge {
         HashSet<Character> charHashSet = new HashSet<>();
 
         //iterate through our word array
-        for(int i = 0; i < charArray.length; i++){
-            Character charachter = charArray[i];
+        for (Character charachter : charArray) {
             //if hashset already contains this string - it is a duplicate and we can return false
-            if(charHashSet.contains(charachter)){
+            if (charHashSet.contains(charachter)) {
                 return false;
             }
             //otherwise this is a new char - store it in our hashset
