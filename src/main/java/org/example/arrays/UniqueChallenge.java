@@ -29,6 +29,7 @@ public class UniqueChallenge {
         return myObj.nextLine();  // Read user input
     }
 
+    //resolves in O(n)
     private static boolean isAllCharsUnique(String word) throws IllegalArgumentException {
         char[] charArray = word.toCharArray();
         //create our hashset
