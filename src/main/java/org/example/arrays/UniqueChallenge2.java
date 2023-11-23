@@ -1,6 +1,5 @@
 package main.java.org.example.arrays;
 
-import java.util.HashSet;
 import java.util.Scanner;
 
 
@@ -15,21 +14,20 @@ public class UniqueChallenge2 {
         validate(word);
 
         //resolve without an additional data structure -
-        if(isAllCharsUnique(word)){
+        if (isAllCharsUnique(word)) {
             System.out.println("All characters are unique");
-        }
-        else{
+        } else {
             System.out.println("All characters are not unique.");
         }
 
     }
 
     //O(n^2)
-    public static boolean isAllCharsUnique(String word){
+    public static boolean isAllCharsUnique(String word) {
         char[] charArray = word.toCharArray();
-        for(int i = 0; i < charArray.length;i++) {
-            for (int j = i+1; j < charArray.length; j++) {
-                if(charArray[i] == (charArray[j])){
+        for (int i = 0; i < charArray.length; i++) {
+            for (int j = i + 1; j < charArray.length; j++) {
+                if (charArray[i] == (charArray[j])) {
                     return false;
                 }
             }
@@ -38,7 +36,7 @@ public class UniqueChallenge2 {
         return true;
     }
 
-    public static String inputWord(){
+    public static String inputWord() {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter word:");
 

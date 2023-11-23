@@ -7,26 +7,25 @@ public class DynamicArray {
     private int index;
 
     //instantiation
-    public DynamicArray(){
+    public DynamicArray() {
         //instantiate with size of 1
         this.myArray = new int[1];
         this.index = 0;
     }
 
-    public void add(int value){
+    public void add(int value) {
         //if there is space in the array
-        if(index < myArray.length){
+        if (index < myArray.length) {
             //add item to the array
             myArray[index] = value;
             index++;
-        }
-        else{
+        } else {
             //double the size of the array
-            int doubleSize = myArray.length*2;
+            int doubleSize = myArray.length * 2;
             int[] newArray = new int[doubleSize];
 
             //copy all of the elements of myArray into newArray
-            for(int i = 0; i < myArray.length; i++){
+            for (int i = 0; i < myArray.length; i++) {
                 newArray[i] = myArray[i];
             }
 
@@ -40,20 +39,19 @@ public class DynamicArray {
     }
 
     //remove
-    public void remove(int position){
+    public void remove(int position) {
         //if the position is greater than our index or size of our array; do nothing
-        if(position > index || position > myArray.length){
+        if (position > index || position > myArray.length) {
             return;
         }
         //start at position and shift everything to the left
-        for(int i = position; i < myArray.length; i++){
+        for (int i = position; i < myArray.length; i++) {
             //for last position always delete value
-            if(i == myArray.length - 1){
+            if (i == myArray.length - 1) {
                 myArray[i] = 0;
-            }
-            else {
+            } else {
                 //shift one to the left
-                myArray[i]  = myArray[i+1];
+                myArray[i] = myArray[i + 1];
             }
         }
     }
@@ -77,7 +75,7 @@ public class DynamicArray {
 
         System.out.println(new StringBuilder().append("Size: ").append(dynamicArray.getMyArray().length));
         System.out.println("Values:");
-        for(int i = 0; i < dynamicArray.getMyArray().length; i++){
+        for (int i = 0; i < dynamicArray.getMyArray().length; i++) {
             int value = dynamicArray.getMyArray()[i];
             System.out.println(new StringBuilder().append(value).append(", "));
         }

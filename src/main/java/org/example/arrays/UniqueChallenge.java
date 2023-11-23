@@ -22,7 +22,7 @@ public class UniqueChallenge {
 
     }
 
-    public static String inputWord(){
+    public static String inputWord() {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter word:");
 

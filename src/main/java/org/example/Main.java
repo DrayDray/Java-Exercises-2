@@ -19,5 +19,6 @@ public class Main {
     }
 
     /*does something for sure*/
-    public static void doSomething(){}
+    public static void doSomething() {
+    }
 }
