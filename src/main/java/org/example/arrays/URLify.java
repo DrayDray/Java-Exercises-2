@@ -14,7 +14,7 @@ public class URLify {
     public static String urlIfy(String input) {
         int spaces = countSpaces(input);
         int remainingInsertions = spaces / 3;
-        if(spaces == 0 || remainingInsertions == 0){
+        if (spaces == 0 || remainingInsertions == 0) {
             //no insertions needed
             return input;
         }
@@ -24,21 +24,20 @@ public class URLify {
         //indicates if we have already shifted a word to the right
         boolean shiftedAWord = false;
         for (int i = charArray.length - 1; i >= 0; i--) {
-            if (Character.isSpaceChar(charArray[i]) && shiftedAWord){
+            if (Character.isSpaceChar(charArray[i]) && shiftedAWord) {
                 charArray[rightMostSpaceIndex] = '%';
-                charArray[rightMostSpaceIndex-1] = '0';
-                charArray[rightMostSpaceIndex-2] = '6';
+                charArray[rightMostSpaceIndex - 1] = '0';
+                charArray[rightMostSpaceIndex - 2] = '6';
                 remainingInsertions--;
-                if(remainingInsertions == 0){
+                if (remainingInsertions == 0) {
                     break;
                 }
-                rightMostSpaceIndex = rightMostSpaceIndex-3;
+                rightMostSpaceIndex = rightMostSpaceIndex - 3;
                 //continue working our way leftward
-                i = rightMostSpaceIndex+1; //loop will reduce i by one
+                i = rightMostSpaceIndex + 1; //loop will reduce i by one
                 //switch back to false
                 shiftedAWord = false;
-            }
-            else if(!Character.isSpaceChar(charArray[i])){
+            } else if (!Character.isSpaceChar(charArray[i])) {
                 //move to rightmost space index
                 charArray[rightMostSpaceIndex] = charArray[i];
                 charArray[i] = ' ';
@@ -53,7 +52,7 @@ public class URLify {
     private static int countSpaces(String input) {
         int count = 0;
         //for (Character ch : Lists.charactersOf(input)) {
-        for(Character ch: input.toCharArray()){
+        for (Character ch : input.toCharArray()) {
             if (Character.isSpaceChar(ch)) {
                 count++;
             }

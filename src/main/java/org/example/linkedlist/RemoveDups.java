@@ -9,6 +9,13 @@ public class RemoveDups {
     public static void main(String[] args) {
         LinkedList<Integer> linkedList = createLinkedList();
         System.out.println(removeDups(linkedList));
+
+        LinkedList<Integer> linkedList2 = createLinkedList();
+        removeDupsNoBuffer(linkedList2);
+    }
+
+    private static void removeDupsNoBuffer(LinkedList<Integer> linkedList2) {
+        //TODO
     }
 
     private static LinkedList<Integer> createLinkedList() {
