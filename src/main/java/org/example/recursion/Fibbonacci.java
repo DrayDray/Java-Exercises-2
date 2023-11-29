@@ -19,7 +19,7 @@ public class Fibbonacci {
     public static int doFib(Integer element, Integer a, Integer b) {
         int sum = a + b;
         a = b;
-        b = sum;ß
+        b = sum;
         element = element - 1;
         if (element == 0) {
             return sum;
