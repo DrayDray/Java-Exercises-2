@@ -11,11 +11,14 @@ public class TreeNode {
         this.data = data;
     }
 
+    /*
+    Traverses and prints entire tree using preOrder Traversal
+     */
     public static void preOrderTraverse(TreeNode node){
         if (node == null){
             return;
         }
-        System.out.println(node.data);
+        System.out.print(node.data + " --> ");
         preOrderTraverse(node.getLeft());
         preOrderTraverse(node.getRight());
     }
