@@ -5,49 +5,46 @@ public class MyLinkedList {
     private Node head;
     private Node tail;
 
-    public MyLinkedList(){
+    public MyLinkedList() {
     }
 
-    public void addNode(Node node){
-            if(head == null){
-                this.head = node;
-            }
-            else{
-                head.next = node;
-                this.head = node;
-            }
-            if(tail == null){
-                this.tail = node;
-            }
+    public void addNode(Node node) {
+        if (head == null) {
+            this.head = node;
+        } else {
+            head.next = node;
+            this.head = node;
+        }
+        if (tail == null) {
+            this.tail = node;
+        }
     }
 
-    public boolean removeNode(Node node){
+    public boolean removeNode(Node node) {
         Node check = tail;
         //first check tail
-        if(tail == null){
+        if (tail == null) {
             return false;
         }
-        if(tail.equals(node)){
+        if (tail.equals(node)) {
             //single node
-            if(this.head == this.tail){
+            if (this.head == this.tail) {
                 head = null;
                 tail = null;
-            }
-            else{
+            } else {
                 tail = check.next;
                 return true;
             }
         }
 
         //then move from forward from tail one by one
-        while(check.next != null){
-            if(check.next.equals(node)){
-                if(check.next.equals(head)){
+        while (check.next != null) {
+            if (check.next.equals(node)) {
+                if (check.next.equals(head)) {
                     //check becomes head
                     head = check;
                     check.next = null;
-                }
-                else{
+                } else {
                     check.next = check.next.next;
                 }
                 return true;
@@ -58,13 +55,12 @@ public class MyLinkedList {
         return false;
     }
 
-    public void printLinkedList(){
+    public void printLinkedList() {
         Node node = this.tail;
-        if(tail == null || head == null){
+        if (tail == null || head == null) {
             System.out.print("Empty LinkedList");
             return;
-        }
-        else {
+        } else {
             while (node != null) {
                 System.out.print(node.data + "--> ");
                 node = node.next;
@@ -74,8 +70,6 @@ public class MyLinkedList {
         System.out.println("===============================================================");
 
     }
-
-
 
 
 }
