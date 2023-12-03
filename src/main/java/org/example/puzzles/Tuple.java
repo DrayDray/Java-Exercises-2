@@ -39,7 +39,7 @@ public class Tuple {
         if (objAsTuple.getA() == this.getB() && objAsTuple.getB() == this.getA()){
             return true;
         }
-        
+
         return false;
     }
 }
