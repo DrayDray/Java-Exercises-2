@@ -32,12 +32,14 @@ public class Tuple {
             return false;
         }
         Tuple objAsTuple = (Tuple) obj;
-        if (objAsTuple.getA() != this.getA()){
-            return false;
+
+        if (objAsTuple.getA() == this.getA() && objAsTuple.getB() == this.getB()){
+            return true;
         }
-        if(objAsTuple.getB() != this.getB()){
-            return false;
+        if (objAsTuple.getA() == this.getB() && objAsTuple.getB() == this.getA()){
+            return true;
         }
-        return true;
+        
+        return false;
     }
 }
