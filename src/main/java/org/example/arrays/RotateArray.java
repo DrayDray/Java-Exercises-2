@@ -43,7 +43,6 @@ public class RotateArray {
             return;
         }
         //store values
-        int leftValue = arr[li];
         int rightValue = arr[ri];
 
         //override right value
