@@ -1,9 +1,10 @@
-package main.java.org.example.tree.depth;
+package org.example.tree.depth;
 
 import org.apache.commons.collections.CollectionUtils;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Stack;
 
 
 public class MaxDepth {
@@ -14,6 +15,33 @@ public class MaxDepth {
 
         BinaryTreeNode tree2 = createBinaryTree();
         System.out.println("Levels:" + traverse2(tree1));
+
+        BinaryTreeNode tree3 = createBinaryTree();
+        System.out.println("Levels:" + traverse3(tree1));
+    }
+
+    /*
+    Iterative DFS (Depth First Search)
+     */
+    private static int traverse3(BinaryTreeNode node) {
+        int level = 0;
+        Stack<NodeInfo> stack = new Stack();
+        stack.push(new NodeInfo(node, 1));
+
+        while (CollectionUtils.isNotEmpty(stack)) {
+            //pop nodeInfo to process
+            NodeInfo nodeInfo = stack.pop();
+
+            //if it's not null - process it
+            if (nodeInfo.node != null) {
+                level = Math.max(level, nodeInfo.depth);
+                //add children to stack
+                stack.push(new NodeInfo(nodeInfo.node.left, nodeInfo.depth + 1));
+                stack.push(new NodeInfo(nodeInfo.node.right, nodeInfo.depth + 1));
+            }
+
+        }
+        return level;
     }
 
     private static BinaryTreeNode createBinaryTree() {
@@ -33,15 +61,15 @@ public class MaxDepth {
         int level = 0;
         LinkedList<BinaryTreeNode> linkedList = new LinkedList<>(Arrays.asList(root));
 
-        while(CollectionUtils.isNotEmpty(linkedList)){
+        while (CollectionUtils.isNotEmpty(linkedList)) {
             level++;
-            for(int i = 0; i < linkedList.size(); i++){
+            for (int i = 0; i < linkedList.size(); i++) {
                 BinaryTreeNode node = linkedList.removeFirst();
-                if(node != null){
-                    if(node.left != null){
+                if (node != null) {
+                    if (node.left != null) {
                         linkedList.push(node.left);
                     }
-                    if(node.right != null){
+                    if (node.right != null) {
                         linkedList.push(node.right);
                     }
                 }
@@ -80,6 +108,16 @@ public class MaxDepth {
             this.val = val;
             this.left = left;
             this.right = right;
+        }
+    }
+
+    protected static class NodeInfo {
+        BinaryTreeNode node;
+        Integer depth;
+
+        public NodeInfo(BinaryTreeNode node, Integer depth) {
+            this.node = node;
+            this.depth = depth;
         }
     }
 }
