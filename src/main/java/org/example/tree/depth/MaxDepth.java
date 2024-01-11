@@ -1,6 +1,7 @@
 package org.example.tree.depth;
 
-import org.apache.commons.collections.CollectionUtils;
+
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.Arrays;
 import java.util.LinkedList;
