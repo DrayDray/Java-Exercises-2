@@ -1,6 +1,9 @@
 package org.example.inheritance.money;
 
 import junit.framework.TestCase;
+import org.example.design.vendingmachine.money.Bill;
+import org.example.design.vendingmachine.money.Coin;
+import org.example.design.vendingmachine.money.Money;
 import org.junit.Assert;
 import org.junit.Test;
 

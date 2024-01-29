@@ -1,4 +1,4 @@
-package org.example.design;
+package org.example.design.ratelimiter;
 
 import java.util.HashMap;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

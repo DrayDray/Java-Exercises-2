@@ -1,4 +1,4 @@
-package org.example.inheritance.money;
+package org.example.design.vendingmachine.money;
 
 public interface Money {
 

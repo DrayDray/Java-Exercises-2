@@ -22,7 +22,7 @@ public class MaxDepth {
     }
 
     /*
-    Iterative DFS (Depth First Search)
+    Iterative DFS (Depth First Search) using Stack
      */
     private static int traverse3(BinaryTreeNode node) {
         int level = 0;
@@ -58,6 +58,9 @@ public class MaxDepth {
         return node1;
     }
 
+    /*
+    Breadth-First Search using linked list
+     */
     public static int traverse2(BinaryTreeNode root) {
         int level = 0;
         LinkedList<BinaryTreeNode> linkedList = new LinkedList<>(Arrays.asList(root));

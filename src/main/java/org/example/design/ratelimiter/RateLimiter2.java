@@ -1,4 +1,4 @@
-package org.example.design;
+package org.example.design.ratelimiter;
 
 import java.sql.Timestamp;
 import java.util.Queue;
